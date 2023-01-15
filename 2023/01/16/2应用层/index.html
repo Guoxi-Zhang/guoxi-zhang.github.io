@@ -1,0 +1,565 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>计算机网络——第二章：应用层 | Guoxi's Blog</title><meta name="author" content="Guoxi Zhang"><meta name="copyright" content="Guoxi Zhang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="应用层要求： 不考：6，7，3，4 重点：2，5 应用层协议原理网络应用架构 client-server peer-to-peer (P2P)  clint-server  通信发起端为client，被动接受端为server  server: always-on host（不间断运行） permanent IP address data centers for scaling（伸缩性）   cli">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络——第二章：应用层">
+<meta property="og:url" content="https://guoxi-zhang.github.io/2023/01/16/2%E5%BA%94%E7%94%A8%E5%B1%82/index.html">
+<meta property="og:site_name" content="Guoxi&#39;s Blog">
+<meta property="og:description" content="应用层要求： 不考：6，7，3，4 重点：2，5 应用层协议原理网络应用架构 client-server peer-to-peer (P2P)  clint-server  通信发起端为client，被动接受端为server  server: always-on host（不间断运行） permanent IP address data centers for scaling（伸缩性）   cli">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/avatar.png">
+<meta property="article:published_time" content="2023-01-15T16:09:53.602Z">
+<meta property="article:modified_time" content="2023-01-15T16:28:47.901Z">
+<meta property="article:author" content="Guoxi Zhang">
+<meta property="article:tag" content="大三第一学期">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="计网">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://guoxi-zhang.github.io/2023/01/16/2%E5%BA%94%E7%94%A8%E5%B1%82/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机网络——第二章：应用层',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-16 00:28:47'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/top_img2.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="Guoxi's Blog"><span class="site-name">Guoxi's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计算机网络——第二章：应用层</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-15T16:09:53.602Z" title="发表于 2023-01-16 00:09:53">2023-01-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-15T16:28:47.901Z" title="更新于 2023-01-16 00:28:47">2023-01-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="计算机网络——第二章：应用层"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>要求：</p>
+<p>不考：6，7，3，4</p>
+<p>重点：2，5</p>
+<h2 id="应用层协议原理"><a href="#应用层协议原理" class="headerlink" title="应用层协议原理"></a>应用层协议原理</h2><h3 id="网络应用架构"><a href="#网络应用架构" class="headerlink" title="网络应用架构"></a>网络应用架构</h3><ul>
+<li>client-server</li>
+<li>peer-to-peer (P2P)</li>
+</ul>
+<h4 id="clint-server"><a href="#clint-server" class="headerlink" title="clint-server"></a>clint-server</h4><img src="image-20221013135416934.png" alt="image-20221013135416934" style="zoom:50%;">
+
+<p>通信发起端为client，被动接受端为server</p>
+<ul>
+<li>server:<ul>
+<li>always-on host（不间断运行）</li>
+<li>permanent IP address</li>
+<li>data centers for scaling（伸缩性）</li>
+</ul>
+</li>
+<li>clients:<ul>
+<li>communicate with server</li>
+<li>may be intermittently connected（通过中转连接）</li>
+<li>may have dynamic IP addresses</li>
+<li>do not communicate directly with each other</li>
+</ul>
+</li>
+</ul>
+<h4 id="P2P"><a href="#P2P" class="headerlink" title="P2P"></a>P2P</h4><img src="image-20221013135435304.png" alt="image-20221013135435304" style="zoom:50%;">
+
+<ul>
+<li>no always-on server</li>
+<li>arbitrary end systems directly communicate(任意端系统直接通信)</li>
+<li>peers request service from other peers, provide service in return to other peers<ul>
+<li>self scalability（自伸缩性） – new peers bring new service capacity, as well as new service demands</li>
+</ul>
+</li>
+<li>peers are intermittently connected and change IP addresses</li>
+<li>complex management</li>
+</ul>
+<h3 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h3><p><strong>进程</strong>(process)：在主机运行的程序。</p>
+<ul>
+<li><p>同一个主机，两进程通过<strong>进程间通信</strong></p>
+</li>
+<li><p>不同主机通过跨越计算机网络交换<strong>报文</strong>（message）而相互通信。</p>
+</li>
+</ul>
+<p>在client-server中，通信发起端为client，被动接受端为server，P2P应用有client和server两个进程</p>
+<h4 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h4><p>进程通过一个称为<strong>套接字(socket)的软件接口</strong>向网络发送报文和从网络接收报文。</p>
+<p>类似于房子的门</p>
+<ul>
+<li>发送消息推出门外</li>
+<li>发送时依赖门另一端的传输层传递报文</li>
+</ul>
+<p><img src="image-20221013141337735.png" alt="image-20221013141337735"></p>
+<h4 id="进程寻址"><a href="#进程寻址" class="headerlink" title="进程寻址"></a>进程寻址</h4><p>进程为了向在另一台主机上运行的进程发送分组，接收进程需要有一个地址。为了标识该接收进程，需要定义两种信息:①<strong>主机的地址</strong>;②定义在目的主机中的<strong>接收进程的标识符</strong>。</p>
+<p>标识符包括：</p>
+<ul>
+<li>主机IP地址，主机设备有唯一的32位IP地址</li>
+<li>端口号<ul>
+<li>HTTP server:80</li>
+<li>mail server:25</li>
+</ul>
+</li>
+</ul>
+<p>问:运行进程的主机IP地址是否足以识别该进程?</p>
+<p>答:不可以，同一个主机上可以运行多个进程。</p>
+<h3 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h3><p>应用层协议（application-layer protocol）定义了运行在不同端系统上的应用程序进程如何相互传递报文。特别是应用层协议定义了:</p>
+<ul>
+<li>交换的<strong>报文类型</strong>,例如请求报文和响应报文(request, response )。</li>
+<li>各种<strong>报文类型的语法</strong>，如报文中的各个字段及这些字段是如何描述的。</li>
+<li><strong>字段的语义</strong>,即这些字段中包含的信息的含义。</li>
+<li>一个进程<strong>何时</strong>以及<strong>如何</strong>发送报文，对报文进行<strong>响应</strong>的规则。</li>
+</ul>
+<p>有些应用层协议是由<strong>RFC</strong> 文档定义的，因此它们位于<strong>公共域</strong>中。例如，Web 的应用层协议 HTTP(超文本传输协议[RFC 2616]）就作为一个RFC可供使用。</p>
+<p>非公共协议：e.g., Skype</p>
+<h2 id="Web-amp-HTTP"><a href="#Web-amp-HTTP" class="headerlink" title="Web &amp; HTTP"></a>Web &amp; HTTP</h2><p><img src="image-20221013142755201.png" alt="image-20221013142755201"></p>
+<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>Web 的应用层协议是**超文本传输协议（HyperText Transfer Protocol, HTTP)<strong>，它是Web的核心，在</strong>[RFC 1945]和[RFC 2616]**中进行了定义。</p>
+<p>HTTP由两个程序实现:<strong>一个客户程序和一个服务器程序</strong>。客户程序和服务器程序运行在不同的端系统中，通过交换HTTP报文进行会话。</p>
+<ul>
+<li>客户端：请求、接受(使用HTTP协议)并显示web objects</li>
+<li>服务器：发送(使用HTTP协议)web objects</li>
+</ul>
+<img src="image-20221013143229087.png" alt="image-20221013143229087" style="zoom: 80%;">
+
+<p>HTTP使用 <strong>TCP作为它的支撑运输协议</strong>(而不是在UDP上运行)。</p>
+<ul>
+<li>客户端向服务器发起TCP连接(创建套接字)，80端口</li>
+<li>服务器接受来自客户端的TCP连接。</li>
+<li>HTTP报文(应用层协议报文)在浏览器(HTTP客户端)和Web服务器(HTTP服务器)之间交换</li>
+<li>TCP连接关闭</li>
+</ul>
+<p>因为HTTP服务器并不保存关于客户的任何信息，所以我们说<strong>HTTP是一个无状态协议（stateless protocol )。</strong></p>
+<h3 id="HTTP连接"><a href="#HTTP连接" class="headerlink" title="HTTP连接"></a>HTTP连接</h3><h4 id="非持续连接"><a href="#非持续连接" class="headerlink" title="非持续连接"></a>非持续连接</h4><ul>
+<li>最多一个对象通过TCP连接<ul>
+<li>完成后connection关闭</li>
+</ul>
+</li>
+<li>下载多个对象需要多个connections</li>
+</ul>
+<img src="image-20221013144927372.png" alt="image-20221013144927372" style="zoom:67%;">
+
+<p><strong>RTT(Round-Trip Time)定义</strong>：小数据包从客户机到服务器再返回的时间。包括：</p>
+<ul>
+<li>分组传播时延</li>
+<li>分组在中间路由器和交换机上的排队时延</li>
+<li>及分组处理时延</li>
+</ul>
+<p><strong>HTTP响应时间：</strong></p>
+<ul>
+<li><p>一个RTT来发起TCP连接</p>
+</li>
+<li><p>一个RTT用于HTTP请求，并返回HTTP响应的前几个字节</p>
+</li>
+<li><p>文件传输时间</p>
+</li>
+<li><p>综上，非持续HTTP响应时间＝2RTT+文件传输时间</p>
+<img src="image-20221013145747862.png" alt="shadow-image-20221013145747862" style="zoom: 67%;"></li>
+</ul>
+<h4 id="持续连接"><a href="#持续连接" class="headerlink" title="持续连接"></a>持续连接</h4><ul>
+<li>多个对象可通过一个TCP连接发送</li>
+<li>服务器在发送响应后保持连接</li>
+<li>通过开放连接打开同一客户端&#x2F;服务器，发送后续HTTP消息</li>
+<li>客户端一旦遇到引用的对象，就发送请求</li>
+<li>对于所有引用的对象，最少一个RTT</li>
+</ul>
+<h3 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h3><h4 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h4><p>例子：</p>
+<p><strong>connection字段重要：表示持久化连接(keep-alive)或非持久化连接(close)</strong></p>
+<p>user-agent字段：可以分辨浏览器版本以及是否是手机版浏览器（mobile）</p>
+<p><img src="image-20221013150305679.png" alt="image-20221013150305679"></p>
+<p><img src="image-20221013150151729.png" alt="image-20221013150151729"></p>
+<ul>
+<li><p>request line的方法: GET、POST、HEAD、PUT 和 DELETE，绝大部分使用GET方法。</p>
+</li>
+<li><p>当使用GET方法时，实体一般为空。而提交表单使用的POST方式会使用该实体。</p>
+</li>
+<li><p>上传表单方式：</p>
+<ul>
+<li><p>POST，此时Web页面的特定内容依赖于用户在表单字段中输入的内容。</p>
+</li>
+<li><p>URL方式，使用GET方法，在请求行的URL字段设置输入：</p>
+<p><img src="image-20221013151041585.png" alt="image-20221013151041585"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h4><p>eg:</p>
+<p><img src="image-20221013151124322.png" alt="image-20221013151124322"></p>
+<p><img src="image-20221013151142687.png" alt="image-20221013151142687"></p>
+<ul>
+<li><p>实体体部分是报文的主要部分，即它包含了所请求的对象本身（表示为data data data data…)。</p>
+</li>
+<li><p>状态行有3个字段</p>
+<ul>
+<li>协议版本字段</li>
+<li>状态码<ul>
+<li><img src="image-20221013151301356.png" alt="image-20221013151301356"></li>
+</ul>
+</li>
+<li>相应状态信息。</li>
+</ul>
+</li>
+</ul>
+<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><blockquote>
+<ul>
+<li>HTTP使用Pull mode, 主动获取，每次request对应一个response.</li>
+<li>Push mode主要用来实现实时系统，一次request后，后端数据一旦更新就发送response<ul>
+<li>HTTP不能实现</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>cookie在[RFC 6265] 中定义，它<strong>允许站点对用户进行跟踪</strong>。目前大多数商务 Web站点都使用了cookie。</p>
+<p>cookie技术有4个组件:</p>
+<ul>
+<li>在 HTTP响应报文中的一个cookie首部行;</li>
+<li>在 HTTP请求报文中的一个cookie首部行;</li>
+<li>在用户端系统中保留有一个 cookie文件，并由用户的浏览器进行管理;</li>
+<li>位于Web站点的一个后端数据库。</li>
+</ul>
+<p><img src="image-20221013152040061.png" alt="image-20221013152040061"></p>
+<p>如何<strong>保持“状态”</strong>？</p>
+<ul>
+<li>协议端点:在多个发送端&#x2F;接收端保持状态交易</li>
+<li>cookie: HTTP消息携带状态</li>
+</ul>
+<h3 id="web-cache"><a href="#web-cache" class="headerlink" title="web cache"></a>web cache</h3><p><strong>Web缓存器（Web cache）</strong>也叫<strong>代理服务器(proxy server)</strong>,它是能够代表初始 Web服务器来满足 HTTP请求的网络实体。</p>
+<p><img src="image-20221013152332399.png" alt="image-20221013152332399"></p>
+<p>cache acts as <strong>both client and server</strong></p>
+<p>好处：</p>
+<ul>
+<li>减少客户端请求的响应时间</li>
+<li>减少机构接入链路的流量</li>
+<li>互联网的缓存:使“糟糕的内容提供者“有效地交付内容(P2P文件共享也是如此)</li>
+</ul>
+<blockquote>
+<p>反向代理服务器：放在web server里，收到request后检查自己cache中是否有相对应的reponse，没有则向web server发送请求，有则直接相应（大多为静态文件html,css,image等），<strong>减轻web server压力</strong></p>
+</blockquote>
+<h3 id="条件GET"><a href="#条件GET" class="headerlink" title="条件GET"></a>条件GET</h3><ul>
+<li><p>目标:如果缓存有最新的缓存版本，就不发送对象</p>
+<ul>
+<li><p>无对象传输延迟</p>
+</li>
+<li><p>降低链路利用率</p>
+</li>
+</ul>
+</li>
+<li><p>cache:指定HTTP请求中缓存副本的日期：if - modified - since: &lt;日期&gt;</p>
+</li>
+<li><p>server:如果缓存副本是最新的，则response不包含任何对象: HTTP&#x2F;1.0 <strong>304 Not Modified</strong></p>
+<p><img src="image-20221013154244379.png" alt="image-20221013154244379"></p>
+</li>
+</ul>
+<h2 id="FTP-文件传输协议"><a href="#FTP-文件传输协议" class="headerlink" title="FTP:文件传输协议"></a>FTP:文件传输协议</h2><img src="image-20221013154410454.png" alt="image-20221013154410454" style="zoom:67%;">
+
+<ul>
+<li><p>ftp: <strong>RFC 959</strong></p>
+</li>
+<li><p>ftp server: <strong>port 21</strong></p>
+</li>
+</ul>
+<p>HTTP和FTP都是文件传输协议，并且有很多共同的特点，例如，它们<strong>都运行在TCP上</strong>。然而，这两个应用层协议也有一些重要的区别。其中最显著的就是<strong>FTP使用了&#x3D;&#x3D;两个并行&#x3D;&#x3D;的TCP连接来传输文件</strong>：</p>
+<ul>
+<li><p>控制连接（(control connection)，用于在两主机之间传输控制信息,如用户标识、口令，改变远程目录的命令以及“存放（put)”和“获取（get)”文件的命令。</p>
+</li>
+<li><p>数据连接（dataconnection)。数据连接用于实际发送一个文件。</p>
+</li>
+<li><p>对FTP传输而言，控制连接贯穿了整个用户会话(session)期间,但是对会话中的每一次文件传输都需要建立一个新的数据连接（即数据连接是非持续的)。</p>
+</li>
+<li><p>FTR服务器必须在<strong>整个会话期间保留用户的状态</strong>（state)，对用户进行追踪，大大限制了FTP同时维持的会话总数。与之相反， <strong>HTTP是无状态的</strong>，即它不必对任何用户状态进行追踪。</p>
+<p><img src="image-20221013154922183.png" alt="image-20221013154922183"></p>
+</li>
+</ul>
+<h3 id="命令与回答"><a href="#命令与回答" class="headerlink" title="命令与回答"></a>命令与回答</h3><p><img src="image-20221013155334017.png" alt="image-20221013155334017"></p>
+<p><img src="image-20221013155350024.png" alt="image-20221013155350024"></p>
+<h2 id="电子邮件"><a href="#电子邮件" class="headerlink" title="电子邮件"></a>电子邮件</h2><p>3个主要部件：</p>
+<ul>
+<li><p>user agents （用户代理）</p>
+<ul>
+<li>编写、编辑、阅读邮件信息</li>
+<li>传出、传入的消息存储在服务器上</li>
+</ul>
+</li>
+<li><p>mail servers </p>
+<ul>
+<li>邮箱：管理和维护着发送给用户的报文</li>
+<li>报文队列：即将发送的报文</li>
+<li>SMTP协议：在不同邮件服务器中传递报文</li>
+</ul>
+</li>
+<li><p>simple mail transfer protocol: SMTP</p>
+<ul>
+<li>分为client和server</li>
+</ul>
+</li>
+</ul>
+<img src="image-20221020140401094.png" alt="image-20221020140401094" style="zoom: 50%;">
+
+<h3 id="SMTP-RFC-2821"><a href="#SMTP-RFC-2821" class="headerlink" title="SMTP [RFC 2821]"></a>SMTP [RFC 2821]</h3><ul>
+<li><p>使用<strong>TCP</strong>传输报文，端口：25</p>
+<ul>
+<li>SMTP 用的是<strong>持续连接</strong>:如果发送邮件服务器有几个报文发往同一个接收邮件服务器，它可以通过同一个TCP连接发送这些所有的报文。</li>
+</ul>
+</li>
+<li><p>三个状态：握手、传输报文、关闭</p>
+</li>
+<li><p>命令与回答（like HTTP &amp; FTP）</p>
+<ul>
+<li>request: ASCII码（报文必须为7bit的ASCII码）</li>
+<li>响应：状态码和解释</li>
+</ul>
+</li>
+<li><p>实例：</p>
+<p><img src="image-20221020141721384.png" alt="image-20221020141721384"></p>
+</li>
+<li><p><strong>P.S.</strong> SMTP一般<strong>不使用中间邮件服务器</strong>发送邮件，即使这两个邮件服务器位于地球的两端也是这样。</p>
+</li>
+</ul>
+<h4 id="SMTP报文分析"><a href="#SMTP报文分析" class="headerlink" title="SMTP报文分析"></a>SMTP报文分析</h4><img src="image-20221020141910113.png" alt="image-20221020141910113" style="zoom:80%;">
+
+<p><strong>5条命令</strong>：HELO, MAIL FROM, RCPT TO, DATA, QUIT </p>
+<h3 id="与HTTP的对比"><a href="#与HTTP的对比" class="headerlink" title="与HTTP的对比"></a>与HTTP的对比</h3><p><strong>相同点：</strong></p>
+<ul>
+<li>这两个协议都用于从一台主机向另一台主机传送文件，其中：<br> HTTP从Web服务器向Web客户（通常是一个浏览器）传送文件（或称对象）；<br> SMTP从一个邮件服务器向另一个邮件服务器传送文件（即电子邮件报文）。</li>
+<li>当进行文件传送时，HTTP和SMTP都使用<strong>持续连接</strong>。</li>
+</ul>
+<p><strong>不同点：</strong></p>
+<ul>
+<li>HTTP主要是<strong>拉(pull)协议</strong>，即在方便的时候，某些人在Web服务器上转载信息，用户使用HTTP从该服务器拉取这些信息。特别是TCP连接是由想接受这些文件的机器发起的。<br> 而SMTP基本上是一个<strong>推(push)协议</strong>，即发送邮件服务器把文件推向接收邮件服务器。特别是这个TCP连接是由想发送该文件的机器发起的。</li>
+<li>SMTP采用<strong>7比特ASCII码</strong>格式。如果该报文包含了非7比特ASCII字符（如具有重音的法文字符）或二进制数据（如图形文件），则该报文必须按照7比特ASCII码进行编码。HTTP<strong>数据则不受该限制。</strong></li>
+<li>对于处理既包含文本又包含图形（也可能是其他媒体类型）的文档。HTTP把每个对象<strong>封装到它自己的HTTP响应报文</strong>中，而SMTP则把<strong>所有报文对象放在一个报文</strong>中。</li>
+</ul>
+<h3 id="邮件报文格式"><a href="#邮件报文格式" class="headerlink" title="邮件报文格式"></a>邮件报文格式</h3><img src="image-20221020143030561.png" alt="image-20221020143030561" style="zoom: 67%;">
+
+<h3 id="邮件访问协议"><a href="#邮件访问协议" class="headerlink" title="邮件访问协议"></a>邮件访问协议</h3><p>拉协议，从邮件服务器中访问自己收到的邮件：</p>
+<img src="image-20221020143313855.png" alt="image-20221020143313855" style="zoom:80%;">
+
+<img src="image-20221020143410812.png" alt="image-20221020143410812" style="zoom: 50%;">
+
+<h2 id="DNS-域名系统"><a href="#DNS-域名系统" class="headerlink" title="DNS(域名系统)"></a>DNS(域名系统)</h2><blockquote>
+<p>对外提供公共服务的主机(服务器)有两个地址，二者双射：</p>
+<ul>
+<li>IP(32 bit) 唯一标识，相当于身份证号</li>
+<li>host name（domain name）相当于名字</li>
+</ul>
+</blockquote>
+<h3 id="DNS简介"><a href="#DNS简介" class="headerlink" title="DNS简介"></a>DNS简介</h3><p><strong>DNS(Domain Name System)是</strong>:</p>
+<ul>
+<li>一个由<strong>分层</strong>的 DNS 服务器（DNS server）实现的<strong>分布式</strong>数据库;<ul>
+<li>DNS 服务器通常是运行 BIND (Berkeley Internet Name Domain)软件[BIND 2012]的UNIX机器。</li>
+</ul>
+</li>
+<li>一个使得主机能够查询分布式数据库的<strong>应用层协议</strong>。<ul>
+<li>DNS协议运行在<strong>UDP</strong>之上，使用53号端口。</li>
+</ul>
+</li>
+</ul>
+<p>DNS通常是由其他应用层协议所使用的，包括<strong>HTTP、SMTP和FTP,将用户提供的主机名解析为IP地址</strong>。</p>
+<h4 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h4><p><strong>top-level域名：</strong></p>
+<ul>
+<li><p>通用域名：</p>
+<ul>
+<li><p>com 商业公司</p>
+</li>
+<li><p>.net 提供服务</p>
+</li>
+<li><p>.gov 政府机构</p>
+</li>
+<li><p>.org 非盈利机构</p>
+</li>
+</ul>
+</li>
+<li><p>国家代码（CC, country-code）</p>
+<ul>
+<li>.cn, .us, .ca</li>
+</ul>
+</li>
+</ul>
+<p><strong>域名结构</strong>：<strong>host name.authoritative name.top-level name</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></li>
+<li>mail.baidu.com</li>
+</ul>
+<h3 id="工作机制"><a href="#工作机制" class="headerlink" title="工作机制"></a>工作机制</h3><ul>
+<li><p><strong>分布式分层：</strong></p>
+<p><img src="image-20221017095640196.png" alt="image-20221017095640196"></p>
+<ul>
+<li><p>root name servers根域名服务器：13台，返回顶级域IP</p>
+</li>
+<li><p>top-level domain (TLD) servers：返回权威域名IP</p>
+</li>
+<li><p>authoritative DNS servers：</p>
+</li>
+</ul>
+</li>
+<li><p>域名解析：两种方式均针对local DNS SVR</p>
+<table>
+<thead>
+<tr>
+<th align="center">迭代查询（少见）</th>
+<th align="center">递归查询</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="image-20221017103837830.png" alt="image-20221017103837830"></td>
+<td align="center"><img src="image-20221017103451145.png" alt="image-20221017103451145"></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>DNS缓存</p>
+</li>
+</ul>
+<h3 id="DNS记录和报文"><a href="#DNS记录和报文" class="headerlink" title="DNS记录和报文"></a>DNS记录和报文</h3><h4 id="DNS记录"><a href="#DNS记录" class="headerlink" title="DNS记录"></a>DNS记录</h4><p><img src="image-20221017104902513.png" alt="image-20221017104902513"></p>
+<p>A记录最重要，记录IP与名字映射</p>
+<p>一个域名使用A type可映射多个IP, 这时DNS使用轮询做负载均衡。</p>
+<h4 id="报文"><a href="#报文" class="headerlink" title="报文"></a>报文</h4><p><img src="image-20221017110106921.png" alt="image-20221017110106921"></p>
+<h3 id="DNS攻击"><a href="#DNS攻击" class="headerlink" title="DNS攻击"></a>DNS攻击</h3><p>分布式拒绝网络攻击(Distributed Denial of Service)</p>
+<img src="image-20221024082247518.png" alt="image-20221024082247518" style="zoom:67%;">
+
+<h2 id="P2P-1"><a href="#P2P-1" class="headerlink" title="P2P"></a>P2P</h2><ul>
+<li>资源去中心化存放</li>
+<li>通过其他主机分享的种子连接到资源拥有者获取数据<ul>
+<li>如果其他主机也拥有资源，同时发起连接，从两个（或多个）主机下载数据，下载速度很快（随拥有数据节点增多下载速度持续增加），且<strong>不存在单点失效</strong></li>
+<li>同时向多个主机发起连接，带宽可能很大，对互联网的压力较大</li>
+</ul>
+</li>
+<li>使用.torrent文件存放文件信息(长度，文件哈希，每一块(256k)的哈希)，通过分享哈希值(种子)使其他主机可以连接本机</li>
+<li>通过tracker服务器(类似于P2P的百度)存放IP与种子的映射，寻找拥有种子的主机。<ul>
+<li>由于版权问题，使用分布式tracker（Distributed hash tracker），每台计算机均备份若干份信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="socket-programming-with-UDP-and-TCP"><a href="#socket-programming-with-UDP-and-TCP" class="headerlink" title="socket programming with UDP and TCP"></a>socket programming with UDP and TCP</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://guoxi-zhang.github.io">Guoxi Zhang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://guoxi-zhang.github.io/2023/01/16/2%E5%BA%94%E7%94%A8%E5%B1%82/">https://guoxi-zhang.github.io/2023/01/16/2%E5%BA%94%E7%94%A8%E5%B1%82/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://guoxi-zhang.github.io" target="_blank">Guoxi's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%A7%E4%B8%89%E7%AC%AC%E4%B8%80%E5%AD%A6%E6%9C%9F/">大三第一学期</a><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%BD%91/">计网</a></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/16/3%E4%BC%A0%E8%BE%93%E5%B1%82/" title="计算机网络——第三章：传输层"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计算机网络——第三章：传输层</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/16/1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络——第一章：计网简介"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计算机网络——第一章：计网简介</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/01/16/1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络——第一章：计网简介"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-16</div><div class="title">计算机网络——第一章：计网简介</div></div></a></div><div><a href="/2023/01/16/4%E7%BD%91%E7%BB%9C%E5%B1%82/" title="计算机网络——第四章：网络层"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-16</div><div class="title">计算机网络——第四章：网络层</div></div></a></div><div><a href="/2023/01/16/5%E9%93%BE%E8%B7%AF%E5%B1%82/" title="计算机网络——第五章：链路层"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-16</div><div class="title">计算机网络——第五章：链路层</div></div></a></div><div><a href="/2023/01/16/3%E4%BC%A0%E8%BE%93%E5%B1%82/" title="计算机网络——第三章：传输层"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-16</div><div class="title">计算机网络——第三章：传输层</div></div></a></div><div><a href="/2023/01/15/SEReview/" title="软件工程知识点复习总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-15</div><div class="title">软件工程知识点复习总结</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Guoxi Zhang</div><div class="author-info__description">Present is a present.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Guoxi-Zhang"><i class="fab fa-github"></i><span>view my github</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">1.</span> <span class="toc-text">应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">应用层协议原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84"><span class="toc-number">1.1.1.</span> <span class="toc-text">网络应用架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#clint-server"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">clint-server</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#P2P"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">P2P</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text">进程通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#socket"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">socket</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E5%AF%BB%E5%9D%80"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">进程寻址</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.1.3.</span> <span class="toc-text">应用层协议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-amp-HTTP"><span class="toc-number">1.2.</span> <span class="toc-text">Web &amp; HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP"><span class="toc-number">1.2.1.</span> <span class="toc-text">HTTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.2.</span> <span class="toc-text">HTTP连接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E6%8C%81%E7%BB%AD%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">非持续连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%81%E7%BB%AD%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">持续连接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.2.3.</span> <span class="toc-text">报文格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">HTTP请求报文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">HTTP响应报文</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie"><span class="toc-number">1.2.4.</span> <span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-cache"><span class="toc-number">1.2.5.</span> <span class="toc-text">web cache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6GET"><span class="toc-number">1.2.6.</span> <span class="toc-text">条件GET</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FTP-%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.3.</span> <span class="toc-text">FTP:文件传输协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%9B%9E%E7%AD%94"><span class="toc-number">1.3.1.</span> <span class="toc-text">命令与回答</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6"><span class="toc-number">1.4.</span> <span class="toc-text">电子邮件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SMTP-RFC-2821"><span class="toc-number">1.4.1.</span> <span class="toc-text">SMTP [RFC 2821]</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SMTP%E6%8A%A5%E6%96%87%E5%88%86%E6%9E%90"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">SMTP报文分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8EHTTP%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-number">1.4.2.</span> <span class="toc-text">与HTTP的对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%AE%E4%BB%B6%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.4.3.</span> <span class="toc-text">邮件报文格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%AE%E4%BB%B6%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.4.4.</span> <span class="toc-text">邮件访问协议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS-%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.5.</span> <span class="toc-text">DNS(域名系统)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS%E7%AE%80%E4%BB%8B"><span class="toc-number">1.5.1.</span> <span class="toc-text">DNS简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">域名</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="toc-number">1.5.2.</span> <span class="toc-text">工作机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS%E8%AE%B0%E5%BD%95%E5%92%8C%E6%8A%A5%E6%96%87"><span class="toc-number">1.5.3.</span> <span class="toc-text">DNS记录和报文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DNS%E8%AE%B0%E5%BD%95"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">DNS记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%A5%E6%96%87"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">报文</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS%E6%94%BB%E5%87%BB"><span class="toc-number">1.5.4.</span> <span class="toc-text">DNS攻击</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P2P-1"><span class="toc-number">1.6.</span> <span class="toc-text">P2P</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#socket-programming-with-UDP-and-TCP"><span class="toc-number">1.7.</span> <span class="toc-text">socket programming with UDP and TCP</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/16/5%E9%93%BE%E8%B7%AF%E5%B1%82/" title="计算机网络——第五章：链路层">计算机网络——第五章：链路层</a><time datetime="2023-01-15T16:09:53.627Z" title="发表于 2023-01-16 00:09:53">2023-01-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/16/4%E7%BD%91%E7%BB%9C%E5%B1%82/" title="计算机网络——第四章：网络层">计算机网络——第四章：网络层</a><time datetime="2023-01-15T16:09:53.619Z" title="发表于 2023-01-16 00:09:53">2023-01-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/16/3%E4%BC%A0%E8%BE%93%E5%B1%82/" title="计算机网络——第三章：传输层">计算机网络——第三章：传输层</a><time datetime="2023-01-15T16:09:53.610Z" title="发表于 2023-01-16 00:09:53">2023-01-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/16/2%E5%BA%94%E7%94%A8%E5%B1%82/" title="计算机网络——第二章：应用层">计算机网络——第二章：应用层</a><time datetime="2023-01-15T16:09:53.602Z" title="发表于 2023-01-16 00:09:53">2023-01-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/16/1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络——第一章：计网简介">计算机网络——第一章：计网简介</a><time datetime="2023-01-15T16:09:53.594Z" title="发表于 2023-01-16 00:09:53">2023-01-16</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/top_img2.jpeg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Guoxi Zhang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
