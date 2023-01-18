@@ -1,0 +1,1634 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>LATEX数学语法 | Guoxi's Blog</title><meta name="author" content="Guoxi Zhang"><meta name="copyright" content="Guoxi Zhang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="$\LaTeX$ 语法集合空格 \quad声调    语法 效果 语法 效果 语法 效果     \bar{x}  \acute{\eta}  \check{\alpha}    \grave{\eta}  \breve{a}  \ddot{y}    \dot{x}  \hat{\alpha}  \tilde{\iota}      函数    语法 效果 语法 效果 语法 效果     \si">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LATEX数学语法">
+<meta property="og:url" content="https://guoxi-zhang.github.io/2023/01/18/Latex%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="Guoxi&#39;s Blog">
+<meta property="og:description" content="$\LaTeX$ 语法集合空格 \quad声调    语法 效果 语法 效果 语法 效果     \bar{x}  \acute{\eta}  \check{\alpha}    \grave{\eta}  \breve{a}  \ddot{y}    \dot{x}  \hat{\alpha}  \tilde{\iota}      函数    语法 效果 语法 效果 语法 效果     \si">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/avatar.png">
+<meta property="article:published_time" content="2023-01-18T13:28:33.571Z">
+<meta property="article:modified_time" content="2023-01-18T13:31:12.519Z">
+<meta property="article:author" content="Guoxi Zhang">
+<meta property="article:tag" content="LATEX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://guoxi-zhang.github.io/2023/01/18/Latex%E8%AF%AD%E6%B3%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LATEX数学语法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-18 21:31:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/top_img1.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="Guoxi's Blog"><span class="site-name">Guoxi's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">LATEX数学语法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-18T13:28:33.571Z" title="发表于 2023-01-18 21:28:33">2023-01-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-18T13:31:12.519Z" title="更新于 2023-01-18 21:31:12">2023-01-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/LATEX/">LATEX</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="LATEX数学语法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="LaTeX-语法集合"><a href="#LaTeX-语法集合" class="headerlink" title="$\LaTeX$ 语法集合"></a>$\LaTeX$ 语法集合</h1><h3 id="空格-quad"><a href="#空格-quad" class="headerlink" title="空格 \quad"></a><strong>空格 \quad</strong></h3><h2 id="声调"><a href="#声调" class="headerlink" title="声调"></a><strong>声调</strong></h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\bar{x}</td>
+<td style="text-align:left"><img src="format,png.png" alt="\bar{x}"></td>
+<td style="text-align:left">\acute{\eta}</td>
+<td style="text-align:left"><img src="format,png-16656245963121.png" alt="\acute{\eta}"></td>
+<td style="text-align:left">\check{\alpha}</td>
+<td style="text-align:left"><img src="format,png-16656245963122.png" alt="\check{\alpha}"></td>
+</tr>
+<tr>
+<td style="text-align:left">\grave{\eta}</td>
+<td style="text-align:left"><img src="format,png-16656245963123.png" alt="\grave{\eta}"></td>
+<td style="text-align:left">\breve{a}</td>
+<td style="text-align:left"><img src="format,png-16656245963134.png" alt="\breve{a}"></td>
+<td style="text-align:left">\ddot{y}</td>
+<td style="text-align:left"><img src="format,png-16656245963135.png" alt="\ddot{y}"></td>
+</tr>
+<tr>
+<td style="text-align:left">\dot{x}</td>
+<td style="text-align:left"><img src="format,png-16656245963136.png" alt="\dot{x}"></td>
+<td style="text-align:left">\hat{\alpha}</td>
+<td style="text-align:left"><img src="format,png-16656245963137.png" alt="\hat{\alpha}"></td>
+<td style="text-align:left">\tilde{\iota}</td>
+<td style="text-align:left"><img src="format,png-16656245963138.png" alt="\tilde{\iota}"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\sin\theta</td>
+<td style="text-align:left"><img src="format,png-166562466231527.png" alt="\sin\!\theta"></td>
+<td style="text-align:left">\cos\theta</td>
+<td style="text-align:left"><img src="format,png-166562466231628.png" alt="\cos\!\theta"></td>
+<td style="text-align:left">\tan\theta</td>
+<td style="text-align:left"><img src="format,png-166562466231629.png" alt="\tan\!\theta"></td>
+</tr>
+<tr>
+<td style="text-align:left">\arcsin\frac{L}{r}</td>
+<td style="text-align:left"><img src="format,png-166562466231630.png" alt="\arcsin\frac{L}{r}"></td>
+<td style="text-align:left">\arccos\frac{T}{r}</td>
+<td style="text-align:left"><img src="format,png-166562466231631.png" alt="\arccos\frac{T}{r}"></td>
+<td style="text-align:left">\arctan\frac{L}{T}</td>
+<td style="text-align:left"><img src="format,png-166562466231632.png" alt="\arctan\frac{L}{T}"></td>
+</tr>
+<tr>
+<td style="text-align:left">\sinh g</td>
+<td style="text-align:left"><img src="format,png-166562466231633.png" alt="\sinh\!g"></td>
+<td style="text-align:left">\cosh h</td>
+<td style="text-align:left"><img src="format,png-166562466231634.png" alt="\cosh\!h"></td>
+<td style="text-align:left">\tanh i</td>
+<td style="text-align:left"><img src="format,png-166562466231635.png" alt="\tanh\!i"></td>
+</tr>
+<tr>
+<td style="text-align:left">\operatorname{sh}j</td>
+<td style="text-align:left"><img src="format,png-166562466231636.png" alt="\operatorname{sh}j"></td>
+<td style="text-align:left">\operatorname{argsh}k</td>
+<td style="text-align:left"><img src="format,png-166562466231637.png" alt="\operatorname{argsh}k"></td>
+<td style="text-align:left">\operatorname{ch}h</td>
+<td style="text-align:left"><img src="format,png-166562466231638.png" alt="\operatorname{ch}h"></td>
+</tr>
+<tr>
+<td style="text-align:left">\operatorname{argch}l</td>
+<td style="text-align:left"><img src="format,png-166562466231639.png" alt="\operatorname{argch}l"></td>
+<td style="text-align:left">\operatorname{th}i</td>
+<td style="text-align:left"><img src="format,png-166562466231740.png" alt="\operatorname{th}i"></td>
+<td style="text-align:left">\operatorname{argth}m</td>
+<td style="text-align:left"><img src="format,png-166562466231741.png" alt="\operatorname{argth}m"></td>
+</tr>
+<tr>
+<td style="text-align:left">k’(x)=\lim_{\Delta x\to 0}\frac{k(x)-k(x-\Delta x)}{\Deltax}</td>
+<td style="text-align:left"><img src="format,png-166562466231742.png" alt="k&#39;(x)=\lim_{\Delta x\to0}\!\frac{k(x)-k(x-\Delta x)}{\Delta x}"></td>
+<td style="text-align:left">\limsup S</td>
+<td style="text-align:left"><img src="format,png-166562466231743.png" alt="\limsup S"></td>
+<td style="text-align:left">\liminf I</td>
+<td style="text-align:left"><img src="format,png-166562466231744.png" alt="\liminf I"></td>
+</tr>
+<tr>
+<td style="text-align:left">\max H</td>
+<td style="text-align:left"><img src="format,png-166562466231745.png" alt="\max\!H"></td>
+<td style="text-align:left">\min L</td>
+<td style="text-align:left"><img src="format,png-166562466231746.png" alt="\min\!L"></td>
+<td style="text-align:left">\inf s</td>
+<td style="text-align:left"><img src="format,png-166562466231747.png" alt="\inf s"></td>
+</tr>
+<tr>
+<td style="text-align:left">\sup t</td>
+<td style="text-align:left"><img src="format,png-166562466231748.png" alt="\sup t"></td>
+<td style="text-align:left">\exp!t</td>
+<td style="text-align:left"><img src="format,png-166562466231749.png" alt="\exp\!t"></td>
+<td style="text-align:left">\ln X</td>
+<td style="text-align:left"><img src="format,png-166562466231750.png" alt="\ln\!X"></td>
+</tr>
+<tr>
+<td style="text-align:left">\lg X</td>
+<td style="text-align:left"><img src="format,png-166562466231751.png" alt="\lg\!X"></td>
+<td style="text-align:left">\log X</td>
+<td style="text-align:left"><img src="format,png-166562466231752.png" alt="\log\!X"></td>
+<td style="text-align:left">\log_\alpha X</td>
+<td style="text-align:left"><img src="format,png-166562466231753.png" alt="\log_\alpha\!X"></td>
+</tr>
+<tr>
+<td style="text-align:left">\ker x</td>
+<td style="text-align:left"><img src="format,png-166562466231754.png" alt="\ker x"></td>
+<td style="text-align:left">\deg x</td>
+<td style="text-align:left"><img src="format,png-166562466231755.png" alt="\deg\!x"></td>
+<td style="text-align:left">\gcd(T,U,V,W,X)</td>
+<td style="text-align:left"><img src="format,png-166562466231756.png" alt="\!\gcd(T,U,V,W,X)"></td>
+</tr>
+<tr>
+<td style="text-align:left">\Pr x</td>
+<td style="text-align:left"><img src="format,png-166562466231857.png" alt="\Pr x"></td>
+<td style="text-align:left">\det x</td>
+<td style="text-align:left"><img src="format,png-166562466231858.png" alt="\det\!x"></td>
+<td style="text-align:left">\hom x</td>
+<td style="text-align:left"><img src="format,png-166562466231859.png" alt="\hom x"></td>
+</tr>
+<tr>
+<td style="text-align:left">\arg x</td>
+<td style="text-align:left"><img src="format,png-166562466231860.png" alt="\arg x"></td>
+<td style="text-align:left">\dim x</td>
+<td style="text-align:left"><img src="format,png-166562466231861.png" alt="\dim x"></td>
+<td style="text-align:left">\lim_{t\to n}T</td>
+<td style="text-align:left"><img src="format,png-166562466231862.png" alt="\lim_{t\to n}T"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="同余"><a href="#同余" class="headerlink" title="同余"></a>同余</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\pmod{m}</td>
+<td style="text-align:left"><img src="format,png-166562466231863.png" alt="\pmod{m}"></td>
+<td style="text-align:left">a \bmod b</td>
+<td style="text-align:left"><img src="format,png-166562466231864.png" alt="a \bmod b"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="微分"><a href="#微分" class="headerlink" title="微分"></a>微分</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\nabla</td>
+<td style="text-align:left"><img src="format,png-1665626150151941.png" alt="\nabla"></td>
+<td style="text-align:left">\partial x</td>
+<td style="text-align:left"><img src="format,png-1665626150151942.png" alt="\partial x"></td>
+<td style="text-align:left">\mathrm{d}x</td>
+<td style="text-align:left"><img src="format,png-1665626183660955.png" alt="img"></td>
+</tr>
+<tr>
+<td style="text-align:left">\dot x</td>
+<td style="text-align:left"><img src="format,png-1665626150151943.png" alt="\dot x"></td>
+<td style="text-align:left">\ddot y</td>
+<td style="text-align:left"><img src="format,png-1665626150152944.png" alt="\ddot y"></td>
+<td style="text-align:left">\tilde{A}_2</td>
+<td style="text-align:left"><img src="tilde{A}_2.gif" alt="\tilde{A}_2"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\forall</td>
+<td style="text-align:left"><img src="format,png-166562466231869.png" alt="\forall"></td>
+<td style="text-align:left">\exists</td>
+<td style="text-align:left"><img src="format,png-166562466231870.png" alt="\exists"></td>
+<td style="text-align:left">\empty</td>
+<td style="text-align:left"><img src="format,png-166562466231871.png" alt="\empty"></td>
+<td style="text-align:left">\emptyset</td>
+<td style="text-align:left"><img src="format,png-166562466231871.png" alt="\emptyset"></td>
+<td style="text-align:left">\varnothing</td>
+<td style="text-align:left"><img src="format,png-166562466231872.png" alt="\varnothing"></td>
+</tr>
+<tr>
+<td style="text-align:left">\in</td>
+<td style="text-align:left"><img src="format,png-166562466231873.png" alt="\in"></td>
+<td style="text-align:left">\ni</td>
+<td style="text-align:left"><img src="format,png-166562466231874.png" alt="\ni"></td>
+<td style="text-align:left">\not\in</td>
+<td style="text-align:left"><img src="format,png-166562466231975.png" alt="\not\in"></td>
+<td style="text-align:left">\notin</td>
+<td style="text-align:left"><img src="format,png-166562466231976.png" alt="\notin"></td>
+<td style="text-align:left">\subset</td>
+<td style="text-align:left"><img src="format,png-166562466231977.png" alt="\subset"></td>
+</tr>
+<tr>
+<td style="text-align:left">\subseteq</td>
+<td style="text-align:left"><img src="format,png-166562466231978.png" alt="\subseteq"></td>
+<td style="text-align:left">\supset</td>
+<td style="text-align:left"><img src="format,png-166562466231979.png" alt="\supset"></td>
+<td style="text-align:left">\supseteq</td>
+<td style="text-align:left"><img src="format,png-166562466231980.png" alt="\supseteq"></td>
+<td style="text-align:left">\cap</td>
+<td style="text-align:left"><img src="format,png-166562466231981.png" alt="\cap"></td>
+<td style="text-align:left">\bigcap</td>
+<td style="text-align:left"><img src="format,png-166562466231982.png" alt="\bigcap"></td>
+</tr>
+<tr>
+<td style="text-align:left">\cup</td>
+<td style="text-align:left"><img src="format,png-166562466231983.png" alt="\cup"></td>
+<td style="text-align:left">\bigcup</td>
+<td style="text-align:left"><img src="format,png-166562466231984.png" alt="\bigcup"></td>
+<td style="text-align:left">\biguplus</td>
+<td style="text-align:left"><img src="format,png-166562466231985.png" alt="\biguplus"></td>
+<td style="text-align:left">\sqsubset</td>
+<td style="text-align:left"><img src="format,png-166562466231986.png" alt="\sqsubset"></td>
+<td style="text-align:left">\sqsubseteq</td>
+<td style="text-align:left"><img src="format,png-166562466231987.png" alt="\sqsubseteq"></td>
+</tr>
+<tr>
+<td style="text-align:left">\sqsupset</td>
+<td style="text-align:left"><img src="format,png-166562466231988.png" alt="\sqsupset"></td>
+<td style="text-align:left">\sqsupseteq</td>
+<td style="text-align:left"><img src="format,png-166562466231989.png" alt="\sqsupseteq"></td>
+<td style="text-align:left">\sqcap</td>
+<td style="text-align:left"><img src="format,png-166562466231990.png" alt="\sqcap"></td>
+<td style="text-align:left">\sqcup</td>
+<td style="text-align:left"><img src="format,png-166562466231991.png" alt="\sqcup"></td>
+<td style="text-align:left">\bigsqcup</td>
+<td style="text-align:left"><img src="format,png-166562466231992.png" alt="\bigsqcup"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="逻辑"><a href="#逻辑" class="headerlink" title="逻辑"></a>逻辑</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">p</td>
+<td style="text-align:left"><img src="format,png-166562466231993.png" alt="p"></td>
+<td style="text-align:left">\land</td>
+<td style="text-align:left"><img src="format,png-166562466232094.png" alt="\land"></td>
+<td style="text-align:left">\wedge</td>
+<td style="text-align:left"><img src="format,png-166562466232095.png" alt="\wedge"></td>
+<td style="text-align:left">\bigwedge</td>
+<td style="text-align:left"><img src="format,png-166562466232096.png" alt="\bigwedge"></td>
+</tr>
+<tr>
+<td style="text-align:left">\bar{q} \to p</td>
+<td style="text-align:left"><img src="format,png-166562466232097.png" alt="\pagecolor{White} \bar{q} \to p"></td>
+<td style="text-align:left">\lor</td>
+<td style="text-align:left"><img src="format,png-166562466232098.png" alt="\lor"></td>
+<td style="text-align:left">\vee</td>
+<td style="text-align:left"><img src="format,png-166562466232099.png" alt="\vee"></td>
+<td style="text-align:left">\bigvee</td>
+<td style="text-align:left"><img src="format,png-1665624662320100.png" alt="\bigvee"></td>
+</tr>
+<tr>
+<td style="text-align:left">\lnot</td>
+<td style="text-align:left"><img src="format,png-1665624662320101.png" alt="\lnot"></td>
+<td style="text-align:left">\neg q</td>
+<td style="text-align:left"><img src="format,png-1665624662320102.png" alt="\pagecolor{White} \neg q"></td>
+<td style="text-align:left">\setminus</td>
+<td style="text-align:left"><img src="format,png-1665624662320103.png" alt="\setminus"></td>
+<td style="text-align:left">\smallsetminus</td>
+<td style="text-align:left"><img src="format,png-1665624662320104.png" alt="\pagecolor{White} \smallsetminus"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="根号"><a href="#根号" class="headerlink" title="根号"></a>根号</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\sqrt{3}</td>
+<td style="text-align:left"><img src="format,png-1665624662320105.png" alt="\sqrt{3}"></td>
+<td style="text-align:left">\sqrt[n]{3}</td>
+<td style="text-align:left"><img src="format,png-1665624662320106.png" alt="\pagecolor{White}\sqrt[n]{3}"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="关系符号"><a href="#关系符号" class="headerlink" title="关系符号"></a>关系符号</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\Delta ABC\sim\Delta XYZ</td>
+<td style="text-align:left"><img src="format,png-1665624662320107.png" alt="\Delta ABC\sim\Delta XYZ\!"></td>
+</tr>
+<tr>
+<td style="text-align:left">\sqrt{3}\approx1.732050808\ldots</td>
+<td style="text-align:left"><img src="format,png-1665624662320108.png" alt="\sqrt{3}\approx1.732050808\ldots"></td>
+</tr>
+<tr>
+<td style="text-align:left">\simeq</td>
+<td style="text-align:left"><img src="format,png-1665624662320109.png" alt="\simeq"></td>
+</tr>
+<tr>
+<td style="text-align:left">\cong</td>
+<td style="text-align:left"><img src="format,png-1665624662320110.png" alt="\cong"></td>
+</tr>
+<tr>
+<td style="text-align:left">\dot=</td>
+<td style="text-align:left"><img src="format,png-1665624662320111.png" alt="\dot="></td>
+</tr>
+<tr>
+<td style="text-align:left">\ggg</td>
+<td style="text-align:left"><img src="format,png-1665624662320112.png" alt="\ggg"></td>
+</tr>
+<tr>
+<td style="text-align:left">\gg</td>
+<td style="text-align:left"><img src="format,png-1665624662321113.png" alt="\gg"></td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left"><img src="format,png-1665624662321114.png" alt="&gt;\,"></td>
+</tr>
+<tr>
+<td style="text-align:left">\ge</td>
+<td style="text-align:left"><img src="format,png-1665624662321115.png" alt="\ge"></td>
+</tr>
+<tr>
+<td style="text-align:left">\geqq</td>
+<td style="text-align:left"><img src="format,png-1665624662321116.png" alt="\geqq"></td>
+</tr>
+<tr>
+<td style="text-align:left">=</td>
+<td style="text-align:left"><img src="format,png-1665624662321117.png" alt="=\,"></td>
+</tr>
+<tr>
+<td style="text-align:left">\leq</td>
+<td style="text-align:left"><img src="format,png-1665624662321118.png" alt="\leq"></td>
+</tr>
+<tr>
+<td style="text-align:left">\leqq</td>
+<td style="text-align:left"><img src="format,png-1665624662321119.png" alt="\leqq"></td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;</td>
+<td style="text-align:left"><img src="format,png-1665624662321120.png" alt="&lt;\,"></td>
+</tr>
+<tr>
+<td style="text-align:left">\ll</td>
+<td style="text-align:left"><img src="format,png-1665624662321121.png" alt="\ll"></td>
+</tr>
+<tr>
+<td style="text-align:left">\lll</td>
+<td style="text-align:left"><img src="format,png-1665624662321122.png" alt="\lll"></td>
+</tr>
+<tr>
+<td style="text-align:left">(x-y)^2\equiv(-x+y)^2\equiv x^2-2xy+y^2</td>
+<td style="text-align:left"><img src="format,png-1665624662321123.png" alt="(x-y)^2\equiv(-x+y)^2\equiv x^2-2xy+y^2"></td>
+</tr>
+<tr>
+<td style="text-align:left">\begin{align} <br>\because\begin{cases}<br> \acute{a}x^2+bx^2+c\gtrless0\gtrless\grave{a}x^2+bx^2+c\\<br>acute{a}&gt;0&gt;\grave{a} \end{cases}\ \  <br>therefore\frac{-b\pm\sqrt{b^2-4\acute{a}c}}{2\acute{a}}{}<em>\lessgtr^<br>\gtrlessx</em>\lessgtr^\gtrless\frac{-b\pm\sqrt{b^2-4\grave{a}c}}<br>{2\grave{a}} \end{align}</td>
+<td style="text-align:left"><img src="format,png-1665624662321124.png" alt="\begin{align} \because\begin{cases} \acute{a}x^2+bx^2+c\gtrless0\gtrless\grave{a}x^2+bx^2+c\ \acute{a}&gt;0&gt;\grave{a} \end{cases}\ \therefore\frac{-b\pm\sqrt{b^2-4\acute{a}c}}{2\acute{a}}{}_\lessgtr^\gtrless x_\lessgtr^\gtrless\frac{-b\pm\sqrt{b^2-4\grave{a}c}}{2\grave{a}} \end{align}"></td>
+</tr>
+<tr>
+<td style="text-align:left">x\not\equiv N</td>
+<td style="text-align:left"><img src="format,png-1665624662321125.png" alt="x\not\equiv N"></td>
+</tr>
+<tr>
+<td style="text-align:left">x\ne A</td>
+<td style="text-align:left"><img src="format,png-1665624662321126.png" alt="x\ne A"></td>
+</tr>
+<tr>
+<td style="text-align:left">x\neq C</td>
+<td style="text-align:left"><img src="format,png-1665624662321127.png" alt="x\neq C"></td>
+</tr>
+<tr>
+<td style="text-align:left">t\propto v</td>
+<td style="text-align:left"><img src="format,png-1665624662321128.png" alt="t\propto v"></td>
+</tr>
+<tr>
+<td style="text-align:left">\pm</td>
+<td style="text-align:left"><img src="format,png-1665624662321129.png" alt="\pm"></td>
+</tr>
+<tr>
+<td style="text-align:left">\mp</td>
+<td style="text-align:left"><img src="format,png-1665624662321130.png" alt="\mp"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="几何符号"><a href="#几何符号" class="headerlink" title="几何符号"></a>几何符号</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">特征</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">菱形</td>
+<td style="text-align:left">\Diamond</td>
+<td style="text-align:left"><img src="format,png-1665624662322131.png" alt="\Diamond"></td>
+</tr>
+<tr>
+<td style="text-align:left">正方形</td>
+<td style="text-align:left">\Box</td>
+<td style="text-align:left"><img src="format,png-1665624662322132.png" alt="\Box"></td>
+</tr>
+<tr>
+<td style="text-align:left">三角形</td>
+<td style="text-align:left">\Delta</td>
+<td style="text-align:left"><img src="format,png-1665624662322133.png" alt="\Delta\!"></td>
+</tr>
+<tr>
+<td style="text-align:left">图型</td>
+<td style="text-align:left">\triangle</td>
+<td style="text-align:left"><img src="format,png-1665624662322134.png" alt="\triangle"></td>
+</tr>
+<tr>
+<td style="text-align:left">角名</td>
+<td style="text-align:left">\angle\Alpha\Beta\Gamma</td>
+<td style="text-align:left"><img src="format,png-1665624662322135.png" alt="\angle\Alpha\Beta\Gamma"></td>
+</tr>
+<tr>
+<td style="text-align:left">角度</td>
+<td style="text-align:left">\sin!\frac{\pi}{3}=\sin60^\operatorname{\omicron}=\frac{\sqrt{3}}{2}</td>
+<td style="text-align:left"><img src="format,png-1665624662322136.png" alt="\sin\!\frac{\pi}{3}=\sin60^\operatorname{\omicron}=\frac{\sqrt{3}}{2}"></td>
+</tr>
+<tr>
+<td style="text-align:left">垂直</td>
+<td style="text-align:left">\perp</td>
+<td style="text-align:left"><img src="format,png-1665624662322137.png" alt="\perp"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="箭头符号"><a href="#箭头符号" class="headerlink" title="箭头符号"></a>箭头符号</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\leftarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662322138.png" alt="\leftarrow"></td>
+<td style="text-align:left">\gets</td>
+<td style="text-align:left"><img src="format,png-1665624662322139.png" alt="\gets"></td>
+<td style="text-align:left">\rightarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662322140.png" alt="\rightarrow"></td>
+</tr>
+<tr>
+<td style="text-align:left">\to</td>
+<td style="text-align:left"><img src="format,png-1665624662322141.png" alt="\to"></td>
+<td style="text-align:left">\leftrightarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662322142.png" alt="\leftrightarrow"></td>
+<td style="text-align:left">\longleftarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662322143.png" alt="\longleftarrow"></td>
+</tr>
+<tr>
+<td style="text-align:left">\longrightarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662322144.png" alt="\longrightarrow"></td>
+<td style="text-align:left">\mapsto</td>
+<td style="text-align:left"><img src="format,png-1665624662322145.png" alt="\mapsto"></td>
+<td style="text-align:left">\longmapsto</td>
+<td style="text-align:left"><img src="format,png-1665624662322146.png" alt="\longmapsto"></td>
+</tr>
+<tr>
+<td style="text-align:left">\hookrightarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662322147.png" alt="\hookrightarrow"></td>
+<td style="text-align:left">\hookleftarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662322148.png" alt="\hookleftarrow"></td>
+<td style="text-align:left">\nearrow</td>
+<td style="text-align:left"><img src="format,png-1665624662322149.png" alt="\nearrow"></td>
+</tr>
+<tr>
+<td style="text-align:left">\searrow</td>
+<td style="text-align:left"><img src="format,png-1665624662322150.png" alt="\searrow"></td>
+<td style="text-align:left">\swarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662323151.png" alt="\swarrow"></td>
+<td style="text-align:left">\nwarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662323152.png" alt="\nwarrow"></td>
+</tr>
+<tr>
+<td style="text-align:left">\uparrow</td>
+<td style="text-align:left"><img src="format,png-1665624662323153.png" alt="\uparrow"></td>
+<td style="text-align:left">\downarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662323154.png" alt="\downarrow"></td>
+<td style="text-align:left">\updownarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662323155.png" alt="\updownarrow"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\rightharpoonup</td>
+<td style="text-align:left"><img src="format,png-1665624662323156.png" alt="\rightharpoonup"></td>
+<td style="text-align:left">\rightharpoondown</td>
+<td style="text-align:left"><img src="format,png-1665624662323157.png" alt="\rightharpoondown"></td>
+<td style="text-align:left">\leftharpoonup</td>
+<td style="text-align:left"><img src="format,png-1665624662323158.png" alt="\leftharpoonup"></td>
+<td style="text-align:left">\leftharpoondown</td>
+<td style="text-align:left"><img src="format,png-1665624662323159.png" alt="\leftharpoondown"></td>
+</tr>
+<tr>
+<td style="text-align:left">\upharpoonleft</td>
+<td style="text-align:left"><img src="format,png-1665624662323160.png" alt="\upharpoonleft"></td>
+<td style="text-align:left">\upharpoonright</td>
+<td style="text-align:left"><img src="format,png-1665624662323161.png" alt="\upharpoonright"></td>
+<td style="text-align:left">\downharpoonleft</td>
+<td style="text-align:left"><img src="format,png-1665624662323162.png" alt="\downharpoonleft"></td>
+<td style="text-align:left">\downharpoonright</td>
+<td style="text-align:left"><img src="format,png-1665624662323163.png" alt="\downharpoonright"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\Leftarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662323164.png" alt="\Leftarrow"></td>
+<td style="text-align:left">\Rightarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662323165.png" alt="\Rightarrow"></td>
+<td style="text-align:left">\Leftrightarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662323166.png" alt="\Leftrightarrow"></td>
+</tr>
+<tr>
+<td style="text-align:left">\Longleftarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662323167.png" alt="\Longleftarrow"></td>
+<td style="text-align:left">\Longrightarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662323168.png" alt="\Longrightarrow"></td>
+<td style="text-align:left">\Longleftrightarrow (or \iff)</td>
+<td style="text-align:left"><img src="format,png-1665624662323169.png" alt="\Longleftrightarrow"></td>
+</tr>
+<tr>
+<td style="text-align:left">\Uparrow</td>
+<td style="text-align:left"><img src="format,png-1665624662323170.png" alt="\Uparrow"></td>
+<td style="text-align:left">\Downarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662323171.png" alt="\Downarrow"></td>
+<td style="text-align:left">\Updownarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662324172.png" alt="\Updownarrow"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\eth</td>
+<td style="text-align:left"><img src="format,png-1665624662324173.png" alt="\eth"></td>
+<td style="text-align:left">\S</td>
+<td style="text-align:left"><img src="format,png-1665624662324174.png" alt="\S"></td>
+<td style="text-align:left">\P</td>
+<td style="text-align:left"><img src="format,png-1665624662324175.png" alt="\P"></td>
+<td style="text-align:left">\%</td>
+<td style="text-align:left"><img src="format,png-1665624662324176.png" alt="\%"></td>
+<td style="text-align:left">\dagger</td>
+<td style="text-align:left"><img src="format,png-1665624662324177.png" alt="\dagger"></td>
+<td style="text-align:left">\ddagger</td>
+<td style="text-align:left"><img src="format,png-1665624662324178.png" alt="\ddagger"></td>
+</tr>
+<tr>
+<td style="text-align:left">\star</td>
+<td style="text-align:left"><img src="format,png-1665624662324179.png" alt="\star"></td>
+<td style="text-align:left">*</td>
+<td style="text-align:left"><img src="format,png-1665624662324180.png" alt="*"></td>
+<td style="text-align:left">\ldots</td>
+<td style="text-align:left"><img src="format,png-1665624662324181.png" alt="\ldots"></td>
+<td style="text-align:left">\smile</td>
+<td style="text-align:left"><img src="format,png-1665624662324182.png" alt="\smile"></td>
+<td style="text-align:left">\frown</td>
+<td style="text-align:left"><img src="format,png-1665624662324183.png" alt="\frown"></td>
+<td style="text-align:left">\wr</td>
+<td style="text-align:left"><img src="format,png-1665624662324184.png" alt="\wr"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\oplus</td>
+<td style="text-align:left"><img src="format,png-1665624662324185.png" alt="\oplus"></td>
+<td style="text-align:left">\bigoplus</td>
+<td style="text-align:left"><img src="format,png-1665624662324186.png" alt="\bigoplus"></td>
+<td style="text-align:left">\otimes</td>
+<td style="text-align:left"><img src="format,png-1665624662324187.png" alt="\otimes"></td>
+</tr>
+<tr>
+<td style="text-align:left">\bigotimes</td>
+<td style="text-align:left"><img src="format,png-1665624662324188.png" alt="\bigotimes"></td>
+<td style="text-align:left">\times</td>
+<td style="text-align:left"><img src="format,png-1665624662324189.png" alt="\times"></td>
+<td style="text-align:left">\cdot</td>
+<td style="text-align:left"><img src="format,png-1665624662324190.png" alt="\cdot"></td>
+</tr>
+<tr>
+<td style="text-align:left">\div</td>
+<td style="text-align:left"><img src="format,png-1665624662324191.png" alt="\div"></td>
+<td style="text-align:left">\circ</td>
+<td style="text-align:left"><img src="format,png-1665624662324192.png" alt="\circ"></td>
+<td style="text-align:left">\bullet</td>
+<td style="text-align:left"><img src="format,png-1665624662325193.png" alt="\bullet"></td>
+</tr>
+<tr>
+<td style="text-align:left">\bigodot</td>
+<td style="text-align:left"><img src="format,png-1665624662325194.png" alt="\bigodot"></td>
+<td style="text-align:left">\boxtimes</td>
+<td style="text-align:left"><img src="format,png-1665624662325195.png" alt="\boxtimes"></td>
+<td style="text-align:left">\boxplus</td>
+<td style="text-align:left"><img src="format,png-1665624662325196.png" alt="\boxplus"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\triangleleft</td>
+<td style="text-align:left"><img src="format,png-1665624662325197.png" alt="\triangleleft"></td>
+<td style="text-align:left">\triangleright</td>
+<td style="text-align:left"><img src="format,png-1665624662325198.png" alt="\triangleright"></td>
+<td style="text-align:left">\infty</td>
+<td style="text-align:left"><img src="format,png-1665624662325199.png" alt="\infty"></td>
+<td style="text-align:left">\bot</td>
+<td style="text-align:left"><img src="format,png-1665624662325200.png" alt="\bot"></td>
+</tr>
+<tr>
+<td style="text-align:left">\top</td>
+<td style="text-align:left"><img src="format,png-1665624662325201.png" alt="\top"></td>
+<td style="text-align:left">\vdash</td>
+<td style="text-align:left"><img src="format,png-1665624662325202.png" alt="\vdash"></td>
+<td style="text-align:left">\vDash</td>
+<td style="text-align:left"><img src="format,png-1665624662325203.png" alt="\vDash"></td>
+<td style="text-align:left">\Vdash</td>
+<td style="text-align:left"><img src="format,png-1665624662325204.png" alt="\Vdash"></td>
+</tr>
+<tr>
+<td style="text-align:left">\models</td>
+<td style="text-align:left"><img src="format,png-1665624662325205.png" alt="\models"></td>
+<td style="text-align:left">\lVert</td>
+<td style="text-align:left"><img src="format,png-1665624662325206.png" alt="\lVert"></td>
+<td style="text-align:left">\rVert</td>
+<td style="text-align:left"><img src="format,png-1665624662325207.png" alt="\rVert"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\imath</td>
+<td style="text-align:left"><img src="format,png-1665624662326208.png" alt="\imath"></td>
+<td style="text-align:left">\hbar</td>
+<td style="text-align:left"><img src="format,png-1665624662326209.png" alt="\hbar"></td>
+<td style="text-align:left">\ell</td>
+<td style="text-align:left"><img src="format,png-1665624662326210.png" alt="\ell"></td>
+</tr>
+<tr>
+<td style="text-align:left">\mho</td>
+<td style="text-align:left"><img src="format,png-1665624662326211.png" alt="\mho"></td>
+<td style="text-align:left">\Finv</td>
+<td style="text-align:left"><img src="format,png-1665624662326212.png" alt="\Finv"></td>
+<td style="text-align:left">\Re</td>
+<td style="text-align:left"><img src="format,png-1665624662326213.png" alt="\Re"></td>
+</tr>
+<tr>
+<td style="text-align:left">\Im</td>
+<td style="text-align:left"><img src="format,png-1665624662326214.png" alt="\Im"></td>
+<td style="text-align:left">\wp</td>
+<td style="text-align:left"><img src="format,png-1665624662326215.png" alt="\wp"></td>
+<td style="text-align:left">\complement</td>
+<td style="text-align:left"><img src="format,png-1665624662326216.png" alt="\complement"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\diamondsuit</td>
+<td style="text-align:left"><img src="format,png-1665624662326217.png" alt="\diamondsuit"></td>
+<td style="text-align:left">\heartsuit</td>
+<td style="text-align:left"><img src="format,png-1665624662326218.png" alt="\heartsuit"></td>
+<td style="text-align:left">\clubsuit</td>
+<td style="text-align:left"><img src="format,png-1665624662326219.png" alt="\clubsuit"></td>
+<td style="text-align:left">\spadesuit</td>
+<td style="text-align:left"><img src="format,png-1665624662326220.png" alt="\spadesuit"></td>
+</tr>
+<tr>
+<td style="text-align:left">\Game</td>
+<td style="text-align:left"><img src="format,png-1665624662326221.png" alt="\Game"></td>
+<td style="text-align:left">\flat</td>
+<td style="text-align:left"><img src="format,png-1665624662326222.png" alt="\flat"></td>
+<td style="text-align:left">\natural</td>
+<td style="text-align:left"><img src="format,png-1665624662326223.png" alt="\natural"></td>
+<td style="text-align:left">\sharp</td>
+<td style="text-align:left"><img src="format,png-1665624662326224.png" alt="\sharp"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="上标、下标及积分等"><a href="#上标、下标及积分等" class="headerlink" title="上标、下标及积分等"></a>上标、下标及积分等</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">功能</th>
+<th style="text-align:center">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">上标</td>
+<td style="text-align:center">a^2</td>
+<td style="text-align:left"><img src="format,png-1665624662327225.png" alt="\pagecolor{White} a^2"></td>
+</tr>
+<tr>
+<td style="text-align:left">下标</td>
+<td style="text-align:center">a_2</td>
+<td style="text-align:left"><img src="format,png-1665624662327226.png" alt="\pagecolor{White} a_2"></td>
+</tr>
+<tr>
+<td style="text-align:left">组合</td>
+<td style="text-align:center">a^{2+2}</td>
+<td style="text-align:left"><img src="format,png-1665624662327227.png" alt="\pagecolor{White} a^{2+2}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">a_{i,j}</td>
+<td style="text-align:left"><img src="format,png-1665624662327228.png" alt="\pagecolor{White} a_{i,j}"></td>
+</tr>
+<tr>
+<td style="text-align:left">结合上下标</td>
+<td style="text-align:center">x_2^3</td>
+<td style="text-align:left"><img src="format,png-1665624662327229.png" alt="\pagecolor{White} x_2^3"></td>
+</tr>
+<tr>
+<td style="text-align:left">前置上下标</td>
+<td style="text-align:center">{}_1^2!X_3^4</td>
+<td style="text-align:left"><img src="format,png-1665624662327230.png" alt="\pagecolor{White} {}_1^2\!X_3^4"></td>
+</tr>
+<tr>
+<td style="text-align:left">导数（<strong>HTML</strong>）</td>
+<td style="text-align:center">x’</td>
+<td style="text-align:left"><img src="format,png-1665624662327231.png" alt="\pagecolor{White} x&#39;"></td>
+</tr>
+<tr>
+<td style="text-align:left">导数 （<strong>PNG</strong>）</td>
+<td style="text-align:center">x^\prime</td>
+<td style="text-align:left"><img src="format,png-1665624662327232.png" alt="\pagecolor{White} x^\prime"></td>
+</tr>
+<tr>
+<td style="text-align:left">导数 （<strong>错误</strong>）</td>
+<td style="text-align:center">x\prime</td>
+<td style="text-align:left"><img src="format,png-1665624662327233.png" alt="\pagecolor{White} x\prime"></td>
+</tr>
+<tr>
+<td style="text-align:left">导数点</td>
+<td style="text-align:center">\dot{x}</td>
+<td style="text-align:left"><img src="format,png-1665624662327234.png" alt="\pagecolor{White} \dot{x}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\ddot{y}</td>
+<td style="text-align:left"><img src="format,png-1665624662327235.png" alt="\pagecolor{White} \ddot{y}"></td>
+</tr>
+<tr>
+<td style="text-align:left">向量</td>
+<td style="text-align:center">\vec{c}</td>
+<td style="text-align:left"><img src="format,png-1665624662327236.png" alt="\pagecolor{White} \vec{c}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\overleftarrow{a b}</td>
+<td style="text-align:left"><img src="format,png-1665624662327237.png" alt="\pagecolor{White} \overleftarrow{a b}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\overrightarrow{c d}</td>
+<td style="text-align:left"><img src="format,png-1665624662327238.png" alt="\pagecolor{White} \overrightarrow{c d}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\widehat{e f g}</td>
+<td style="text-align:left"><img src="format,png-1665624662327239.png" alt="\pagecolor{White} \widehat{e f g}"></td>
+</tr>
+<tr>
+<td style="text-align:left">上弧</td>
+<td style="text-align:center">\overset{\frown} {AB}</td>
+<td style="text-align:left"><img src="format,png-1665624662327240.png" alt="\pagecolor{White} \overset{\frown} {AB}"></td>
+</tr>
+<tr>
+<td style="text-align:left">上划线</td>
+<td style="text-align:center">\overline{h i j}</td>
+<td style="text-align:left"><img src="format,png-1665624662327241.png" alt="\pagecolor{White} \overline{h i j}"></td>
+</tr>
+<tr>
+<td style="text-align:left">下划线</td>
+<td style="text-align:center">\underline{k l m}</td>
+<td style="text-align:left"><img src="format,png-1665624662327242.png" alt="\pagecolor{White} \underline{k l m}"></td>
+</tr>
+<tr>
+<td style="text-align:left">上括号</td>
+<td style="text-align:center">\overbrace{1+2+\cdots+100}</td>
+<td style="text-align:left"><img src="format,png-1665624662328243.png" alt="\pagecolor{White} \overbrace{1+2+\cdots+100}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\begin{matrix} 5050 \ \overbrace{ 1+2+\cdots+100 }\end{matrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662328244.png" alt="\pagecolor{White} \begin{matrix} 5050 \\ \overbrace{ 1+2+\cdots+100 } \end{matrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left">下括号</td>
+<td style="text-align:center">\underbrace{a+b+\cdots+z}</td>
+<td style="text-align:left"><img src="format,png-1665624662328245.png" alt="\pagecolor{White} \underbrace{a+b+\cdots+z}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\begin{matrix} \underbrace{ a+b+\cdots+z } \ 26\end{matrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662328246.png" alt="\pagecolor{White} \begin{matrix} \underbrace{ a+b+\cdots+z } \\ 26 \end{matrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left">求和</td>
+<td style="text-align:center">\sum_{k=1}^N k^2`</td>
+<td style="text-align:left"><img src="format,png-1665624662328247.png" alt="\pagecolor{White} \sum_{k=1}^N k^2"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\begin{matrix} \sum_{k=1}^N k^2 \end{matrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662328248.png" alt="\pagecolor{White} \begin{matrix} \sum_{k=1}^N k^2 \end{matrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left">求积</td>
+<td style="text-align:center">\prod_{i=1}^N x_i`</td>
+<td style="text-align:left"><img src="format,png-1665624662328249.png" alt="\pagecolor{White} \prod_{i=1}^N x_i"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\begin{matrix} \prod_{i=1}^N x_i \end{matrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662328250.png" alt="\pagecolor{White} \begin{matrix} \prod_{i=1}^N x_i \end{matrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left">上积</td>
+<td style="text-align:center">\coprod_{i=1}^N x_i`</td>
+<td style="text-align:left"><img src="format,png-1665624662328251.png" alt="\pagecolor{White} \coprod_{i=1}^N x_i"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\begin{matrix} \coprod_{i=1}^N x_i\end{matrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662328252.png" alt="\pagecolor{White} \begin{matrix} \coprod_{i=1}^N x_i \end{matrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left">极限</td>
+<td style="text-align:center">\lim_{n \to \infty}x_n`</td>
+<td style="text-align:left"><img src="format,png-1665624662328253.png" alt="\pagecolor{White} \lim_{n \to \infty}x_n"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\begin{matrix} \lim_{n \to \infty}x_n\end{matrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662328254.png" alt="\pagecolor{White} \begin{matrix} \lim_{n \to \infty}x_n \end{matrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left">积分</td>
+<td style="text-align:center">\int_{-N}^{N} e^x\, dx`</td>
+<td style="text-align:left"><img src="format,png-1665624662328255.png" alt="\pagecolor{White} \int_{-N}^{N} e^x\, dx"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">\begin{matrix} \int_{-N}^{N} e^x\, dx\end{matrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662328256.png" alt="\pagecolor{White} \begin{matrix} \int_{-N}^{N} e^x\, dx \end{matrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left">双重积分</td>
+<td style="text-align:center">\iint_{D}^{W} \, dx\,dy`</td>
+<td style="text-align:left"><img src="format,png-1665624662328257.png" alt="\pagecolor{White} \iint_{D}^{W} \, dx\,dy"></td>
+</tr>
+<tr>
+<td style="text-align:left">三重积分</td>
+<td style="text-align:center">\iiint_{E}^{V} \, dx\,dy\,dz`</td>
+<td style="text-align:left"><img src="format,png-1665624662328258.png" alt="\pagecolor{White} \iiint_{E}^{V} \, dx\,dy\,dz"></td>
+</tr>
+<tr>
+<td style="text-align:left">四重积分</td>
+<td style="text-align:center">\iiiint_{F}^{U} \, dx\,dy\,dz\,dt`</td>
+<td style="text-align:left"><img src="format,png-1665624662329259.png" alt="\pagecolor{White} \iiiint_{F}^{U} \, dx\,dy\,dz\,dt"></td>
+</tr>
+<tr>
+<td style="text-align:left">闭合的曲线路径积分、曲面积分</td>
+<td style="text-align:center">\oint_{C} x^3\, dx + 4y^2\, dy</td>
+<td style="text-align:left"><img src="format,png-1665624662329260.png" alt="\pagecolor{White} \oint_{C} x^3\, dx + 4y^2\, dy"></td>
+</tr>
+<tr>
+<td style="text-align:left">交集</td>
+<td style="text-align:center">\bigcap_1^{n} p`</td>
+<td style="text-align:left"><img src="format,png-1665624662329261.png" alt="\pagecolor{White} \bigcap_1^{n} p"></td>
+</tr>
+<tr>
+<td style="text-align:left">并集</td>
+<td style="text-align:center">\bigcup_1^{k} p`</td>
+<td style="text-align:left"><img src="format,png-1665624662329262.png" alt="\pagecolor{White} \bigcup_1^{k} p"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="分数、矩阵和多行列式"><a href="#分数、矩阵和多行列式" class="headerlink" title="分数、矩阵和多行列式"></a>分数、矩阵和多行列式</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">分数</td>
+<td style="text-align:left">\frac{2}{4}=0.5`</td>
+<td style="text-align:left"><img src="format,png-1665624662329263.png" alt="\frac{2}{4}=0.5"></td>
+</tr>
+<tr>
+<td style="text-align:left">小型分数</td>
+<td style="text-align:left">\tfrac{2}{4} = 0.5`</td>
+<td style="text-align:left"><img src="format,png-1665624662329264.png" alt="\tfrac{2}{4} = 0.5"></td>
+</tr>
+<tr>
+<td style="text-align:left">大型分数（嵌套）</td>
+<td style="text-align:left">\cfrac{2}{c + \cfrac{2}{d + \cfrac{2}{4}}} =a`</td>
+<td style="text-align:left"><img src="format,png-1665624662329265.png" alt="\cfrac{2}{c + \cfrac{2}{d + \cfrac{2}{4}}} = a"></td>
+</tr>
+<tr>
+<td style="text-align:left">大型分数（不嵌套）</td>
+<td style="text-align:left">\dfrac{2}{4} = 0.5 \qquad \dfrac{2}{c + \dfrac{2}{d +\dfrac{2}{4}}} = a`</td>
+<td style="text-align:left"><img src="format,png-1665624662329266.png" alt="\dfrac{2}{4} = 0.5 \qquad \dfrac{2}{c + \dfrac{2}{d + \dfrac{2}{4}}} = a"></td>
+</tr>
+<tr>
+<td style="text-align:left">二项式系数</td>
+<td style="text-align:left">\dbinom{n}{r}=\binom{n}{n-r}=C^n<em>r=C^n</em>{n-r}</td>
+<td style="text-align:left"><img src="format,png-1665624662329267.png" alt="\dbinom{n}{r}=\binom{n}{n-r}=C^n_r=C^n_{n-r}"></td>
+</tr>
+<tr>
+<td style="text-align:left">小型二项式系数</td>
+<td style="text-align:left">\tbinom{n}{r}=\tbinom{n}{n-r}=C^n<em>r=C^n</em>{n-r}</td>
+<td style="text-align:left"><img src="format,png-1665624662329268.png" alt="\tbinom{n}{r}=\tbinom{n}{n-r}=C^n_r=C^n_{n-r}"></td>
+</tr>
+<tr>
+<td style="text-align:left">大型二项式]系数</td>
+<td style="text-align:left">\binom{n}{r}=\dbinom{n}{n-r}=C^n<em>r=C^n</em>{n-r}</td>
+<td style="text-align:left"><img src="format,png-1665624662329269.png" alt="\binom{n}{r}=\dbinom{n}{n-r}=C^n_r=C^n_{n-r}"></td>
+</tr>
+<tr>
+<td style="text-align:left">矩阵</td>
+<td style="text-align:left">\begin{matrix}x &amp; y \z &amp; v\end{matrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662329270.png" alt="\begin{matrix} x &amp; y \\ z &amp; v \end{matrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\begin{vmatrix}x &amp; y \z &amp; v\end{vmatrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662329271.png" alt="\begin{vmatrix} x &amp; y \\ z &amp; v \end{vmatrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\begin{Vmatrix}x &amp; y \z &amp; v\end{Vmatrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662329272.png" alt="\begin{Vmatrix} x &amp; y \\ z &amp; v \end{Vmatrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\begin{bmatrix}0 &amp; \cdots &amp; 0 \\vdots &amp; \ddots &amp; \vdots \0 &amp; \cdots &amp; 0\end{bmatrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662329273.png" alt="\begin{bmatrix} 0 &amp; \cdots &amp; 0 \\ \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; \cdots &amp; 0\end{bmatrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\begin{Bmatrix}x &amp; y \z &amp; v\end{Bmatrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662329274.png" alt="\begin{Bmatrix} x &amp; y \\ z &amp; v \end{Bmatrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\begin{pmatrix}x &amp; y \z &amp; v\end{pmatrix}</td>
+<td style="text-align:left"><img src="format,png-1665624662329275.png" alt="\begin{pmatrix} x &amp; y \\ z &amp; v \end{pmatrix}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\bigl( \begin{smallmatrix}a&amp;b\ c&amp;d\end{smallmatrix} \bigr)</td>
+<td style="text-align:left"><img src="format,png-1665624662329276.png" alt="\bigl( \begin{smallmatrix} a&amp;b\\ c&amp;d \end{smallmatrix} \bigr)"></td>
+</tr>
+<tr>
+<td style="text-align:left">条件定义</td>
+<td style="text-align:left">`f(n) =\begin{cases}n/2, &amp; \mbox{if }n\mbox{ is even} \3n+1, &amp; \mbox{if }n\mbox{ is odd}\end{cases}</td>
+<td style="text-align:left"><img src="format,png-1665624662329277.png" alt="f(n) = \begin{cases} n/2, &amp; \mbox{if }n\mbox{ is even} \ 3n+1, &amp; \mbox{if }n\mbox{ is odd} \end{cases}"></td>
+</tr>
+<tr>
+<td style="text-align:left">多行等式</td>
+<td style="text-align:left">\begin{align}f(x) &amp; = (m+n)^2 \&amp; = m^2+2mn+n^2 \\end{align}</td>
+<td style="text-align:left"><img src="format,png-1665624662330278.png" alt="\begin{align} f(x) &amp; = (m+n)^2 \ &amp; = m^2+2mn+n^2 \ \end{align}"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\begin{alignat}{2}f(x) &amp; = (m-n)^2 \f(x) &amp; = (-m+n)^2 \&amp; = m^2-2mn+n^2 \\end{alignat}</td>
+<td style="text-align:left"><img src="format,png-1665624662330279.png" alt="\begin{alignat}{2} f(x) &amp; = (m-n)^2 \ f(x) &amp; = (-m+n)^2 \ &amp; = m^2-2mn+n^2 \ \end{alignat}"></td>
+</tr>
+<tr>
+<td style="text-align:left">多行等式（左对齐）</td>
+<td style="text-align:left">\begin{array}{lcl}z &amp; = &amp; a \f(x,y,z) &amp; = &amp; x + y + z\end{array}</td>
+<td style="text-align:left"><img src="format,png-1665624662330280.png" alt="\begin{array}{lcl} z &amp; = &amp; a \ f(x,y,z) &amp; = &amp; x + y + z \end{array}"></td>
+</tr>
+<tr>
+<td style="text-align:left">多行等式（右对齐）</td>
+<td style="text-align:left">\begin{array}{lcr}z &amp; = &amp; a \f(x,y,z) &amp; = &amp; x + y + z\end{array}</td>
+<td style="text-align:left"><img src="format,png-1665624662330281.png" alt="\begin{array}{lcr} z &amp; = &amp; a \ f(x,y,z) &amp; = &amp; x + y + z \end{array}"></td>
+</tr>
+<tr>
+<td style="text-align:left">长公式换行</td>
+<td style="text-align:left"><math>f(x) \,!</math><math>= \sum_{n=0}^\infty a_n x^n </math><math>= a_0+a_1x+a_2x^2+\cdots</math>`</td>
+<td style="text-align:left"><img src="format,png-1665624662330282.png" alt="f(x) \,\!"><img src="format,png-1665624662330283.png" alt="= \sum_{n=0}^\infty a_n x^n"><img src="format,png-1665624662330284.png" alt="= a_0 +a_1x+a_2x^2+\cdots"></td>
+</tr>
+<tr>
+<td style="text-align:left">方程组</td>
+<td style="text-align:left">\begin{cases}3x + 5y + z \7x - 2y + 4z \-6x + 3y + 2z\end{cases}</td>
+<td style="text-align:left"><img src="format,png-1665624662330285.png" alt="\begin{cases} 3x + 5y + z \\ 7x - 2y + 4z \\ -6x + 3y + 2z \end{cases}"></td>
+</tr>
+<tr>
+<td style="text-align:left">数组</td>
+<td style="text-align:left">\begin{array}{\</td>
+<td style="text-align:left">c\</td>
+<td>c\</td>
+<td>\</td>
+<td>c\</td>
+<td>} a &amp; b &amp; S \\hline0&amp;0&amp;1\0&amp;1&amp;1\1&amp;0&amp;1\1&amp;1&amp;0\\end{array}</td>
+<td>![\begin{array}{\</td>
+<td>c\</td>
+<td>c\</td>
+<td>\</td>
+<td>c\</td>
+<td>} a &amp; b &amp; S \ \hline 0&amp;0&amp;1\ 0&amp;1&amp;1\ 1&amp;0&amp;1\ 1&amp;1&amp;0\ \end{array}](Latex语法/format,png-1665624662330286.png)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><h4 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h4><p>斜体小写希腊字母一般用于在方程中显示变量。</p>
+<h6 id="正体希腊字母"><a href="#正体希腊字母" class="headerlink" title="正体希腊字母"></a>正体希腊字母</h6><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">特征</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">大写字母</td>
+<td style="text-align:left">\Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta\Theta</td>
+<td style="text-align:left"><img src="format,png-1665624662330287.png" alt="\Alpha\Beta\Gamma\Delta\Epsilon\Zeta\Eta\Theta\!"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\Iota \Kappa \Lambda \Mu \Nu \Xi \Omicron \Pi</td>
+<td style="text-align:left"><img src="format,png-1665624662330288.png" alt="\Iota\Kappa\Lambda\Mu\Nu\Xi\Omicron\Pi\!"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\Rho \Sigma \Tau \Upsilon \Phi \Chi \Psi\Omega</td>
+<td style="text-align:left"><img src="format,png-1665624662330289.png" alt="\Rho\Sigma\Tau\Upsilon\Phi\Chi\Psi\Omega\!"></td>
+</tr>
+<tr>
+<td style="text-align:left">小写字母</td>
+<td style="text-align:left">\alpha \beta \gamma \delta \epsilon \zeta \eta\theta</td>
+<td style="text-align:left"><img src="format,png-1665624662330290.png" alt="\alpha\beta\gamma\delta\epsilon\zeta\eta\theta\!"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\iota \kappa\varkappa \lambda \mu \nu \xi \omicron\pi</td>
+<td style="text-align:left"><img src="format,png-1665624662330291.png" alt="\iota\kappa\varkappa\lambda\mu\nu\xi\omicron\pi\!"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\rho \sigma \tau \upsilon \phi \chi \psi\omega</td>
+<td style="text-align:left"><img src="format,png-1665624662330292.png" alt="\rho\sigma\tau\upsilon\phi\chi\psi\omega\!"></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>异体字母</strong></td>
+<td style="text-align:left">\Epsilon\epsilon\varepsilon</td>
+<td style="text-align:left"><img src="format,png-1665624662330293.png" alt="\Epsilon\epsilon\varepsilon"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\Theta\theta\vartheta</td>
+<td style="text-align:left"><img src="format,png-1665624662330294.png" alt="\Theta\theta\vartheta"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\Kappa\kappa\varkappa</td>
+<td style="text-align:left"><img src="format,png-1665628155396958.png" alt="img"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\Pi\pi\varpi</td>
+<td style="text-align:left"><img src="format,png-1665628163871961.png" alt="\Pi\pi\varpi"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\Rho\rho\varrho</td>
+<td style="text-align:left"><img src="format,png-1665628170425964.png" alt="\Rho\rho\varrho"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\Sigma\sigma\varsigma</td>
+<td style="text-align:left"><img src="format,png-1665628178158967.png" alt="img"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\Phi\phi\varphi</td>
+<td style="text-align:left"><img src="format,png-1665628183956970.png" alt="\Phi\phi\varphi\,"></td>
+</tr>
+<tr>
+<td style="text-align:left">已停用字母</td>
+<td style="text-align:left">\digamma</td>
+<td style="text-align:left"><img src="format,png-1665624662331300.png" alt="\digamma"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>粗体希腊字母</strong>：\boldsymbol{letter}</p>
+<h4 id="括号"><a href="#括号" class="headerlink" title="括号"></a>括号</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">显示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">不好看</td>
+<td style="text-align:left">( \frac{1}{2} )</td>
+<td style="text-align:left"><img src="format,png-1665624662331314.png" alt="( \frac{1}{2} )"></td>
+</tr>
+<tr>
+<td style="text-align:left">好看了</td>
+<td style="text-align:left">\left( \frac{1}{2} \right)</td>
+<td style="text-align:left"><img src="format,png-1665624662331315.png" alt="\left ( \frac{1}{2} \right )"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>您可以使用 \left<code>和 \right</code> 来显示不同的括号：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">显示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">圆括号，小括号</td>
+<td style="text-align:left">\left( \frac{a}{b} \right)</td>
+<td style="text-align:left"><img src="format,png-1665624662332316.png" alt="\left( \frac{a}{b} \right)"></td>
+</tr>
+<tr>
+<td style="text-align:left">方括号，中括号</td>
+<td style="text-align:left">\left[ \frac{a}{b} \right]</td>
+<td style="text-align:left"><img src="format,png-1665624662332317.png" alt="\left[ \frac{a}{b} \right]"></td>
+</tr>
+<tr>
+<td style="text-align:left">花括号，大括号</td>
+<td style="text-align:left">\left{ \frac{a}{b} \right}</td>
+<td style="text-align:left"><img src="format,png-1665624662332318.png" alt="\left\{ \frac{a}{b} \right\}"></td>
+</tr>
+<tr>
+<td style="text-align:left">角括号</td>
+<td style="text-align:left">\left \langle \frac{a}{b} \right \rangle</td>
+<td style="text-align:left"><img src="format,png-1665624662332319.png" alt="\left\langle \frac{a}{b} \right \rangle"></td>
+</tr>
+<tr>
+<td style="text-align:left">单竖线，绝对值</td>
+<td style="text-align:left">\left\</td>
+<td style="text-align:left">\frac{a}{b} \right\</td>
+<td></td>
+<td>![\left\</td>
+<td>\frac{a}{b} \right\</td>
+<td>](Latex语法/format,png-1665624662332320.png)</td>
+</tr>
+<tr>
+<td style="text-align:left">双竖线，范</td>
+<td style="text-align:left">\left \</td>
+<td style="text-align:left">\frac{a}{b} \right \</td>
+<td></td>
+<td>![\left \</td>
+<td>\frac{a}{b} \right \</td>
+<td>](Latex语法/format,png-1665624662332321.png)</td>
+</tr>
+<tr>
+<td style="text-align:left">取整函数 （Floor function）</td>
+<td style="text-align:left">\left \lfloor \frac{a}{b} \right \rfloor</td>
+<td style="text-align:left"><img src="format,png-1665624662332322.png" alt="\left \lfloor \frac{a}{b} \right \rfloor"></td>
+</tr>
+<tr>
+<td style="text-align:left">取顶函数 （Ceiling function)</td>
+<td style="text-align:left">\left \lceil \frac{c}{d} \right \rceil</td>
+<td style="text-align:left"><img src="format,png-1665624662332323.png" alt="\left \lceil \frac{c}{d} \right \rceil"></td>
+</tr>
+<tr>
+<td style="text-align:left">斜线与反斜线</td>
+<td style="text-align:left">\left / \frac{a}{b} \right \backslash</td>
+<td style="text-align:left"><img src="format,png-1665624662332324.png" alt="\left / \frac{a}{b} \right \backslash"></td>
+</tr>
+<tr>
+<td style="text-align:left">上下箭头</td>
+<td style="text-align:left">\left \uparrow \frac{a}{b} \right \downarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662332325.png" alt="\pagecolor{White}\left \uparrow \frac{a}{b} \right \downarrow"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\left \Uparrow \frac{a}{b} \right \Downarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662332326.png" alt="\pagecolor{White}\left \Uparrow \frac{a}{b} \right \Downarrow"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">\left \updownarrow \frac{a}{b} \right\Updownarrow</td>
+<td style="text-align:left"><img src="format,png-1665624662332327.png" alt="\pagecolor{White}\left \updownarrow \frac{a}{b} \right \Updownarrow"></td>
+</tr>
+<tr>
+<td style="text-align:left">混合括号</td>
+<td style="text-align:left">\left [ 0,1 \right ) \left \langle \psi \right \</td>
+<td style="text-align:left"></td>
+<td>![\left \langle \psi \right \</td>
+<td>](Latex语法/format,png-1665624662332328.png)</td>
+</tr>
+<tr>
+<td style="text-align:left">单左括号</td>
+<td style="text-align:left">\left { \frac{a}{b} \right .</td>
+<td style="text-align:left"><img src="format,png-1665624662332329.png" alt="\left \{ \frac{a}{b} \right ."></td>
+</tr>
+<tr>
+<td style="text-align:left">单右括号</td>
+<td style="text-align:left">\left . \frac{a}{b} \right }</td>
+<td style="text-align:left"><img src="format,png-1665624662332330.png" alt="\left . \frac{a}{b} \right \}"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://guoxi-zhang.github.io">Guoxi Zhang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://guoxi-zhang.github.io/2023/01/18/Latex%E8%AF%AD%E6%B3%95/">https://guoxi-zhang.github.io/2023/01/18/Latex%E8%AF%AD%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://guoxi-zhang.github.io" target="_blank">Guoxi's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/LATEX/">LATEX</a></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/01/16/5%E9%93%BE%E8%B7%AF%E5%B1%82/" title="计算机网络——第五章：链路层"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计算机网络——第五章：链路层</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Guoxi Zhang</div><div class="author-info__description">Present is a present.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Guoxi-Zhang"><i class="fab fa-github"></i><span>view my github</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LaTeX-%E8%AF%AD%E6%B3%95%E9%9B%86%E5%90%88"><span class="toc-number">1.</span> <span class="toc-text">$\LaTeX$ 语法集合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E6%A0%BC-quad"><span class="toc-number">1.0.1.</span> <span class="toc-text">空格 \quad</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E8%B0%83"><span class="toc-number">1.1.</span> <span class="toc-text">声调</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E4%BD%99"><span class="toc-number">1.3.</span> <span class="toc-text">同余</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E5%88%86"><span class="toc-number">1.4.</span> <span class="toc-text">微分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-number">1.5.</span> <span class="toc-text">集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91"><span class="toc-number">1.6.</span> <span class="toc-text">逻辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E5%8F%B7"><span class="toc-number">1.7.</span> <span class="toc-text">根号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.8.</span> <span class="toc-text">关系符号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.9.</span> <span class="toc-text">几何符号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.10.</span> <span class="toc-text">箭头符号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.11.</span> <span class="toc-text">特殊符号</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E6%A0%87%E3%80%81%E4%B8%8B%E6%A0%87%E5%8F%8A%E7%A7%AF%E5%88%86%E7%AD%89"><span class="toc-number">1.11.0.1.</span> <span class="toc-text">上标、下标及积分等</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%95%B0%E3%80%81%E7%9F%A9%E9%98%B5%E5%92%8C%E5%A4%9A%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">1.11.0.2.</span> <span class="toc-text">分数、矩阵和多行列式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E4%BD%93"><span class="toc-number">1.12.</span> <span class="toc-text">字体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D"><span class="toc-number">1.12.0.1.</span> <span class="toc-text">希腊字母</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%AD%A3%E4%BD%93%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D"><span class="toc-number">1.12.0.1.0.1.</span> <span class="toc-text">正体希腊字母</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%AC%E5%8F%B7"><span class="toc-number">1.12.0.2.</span> <span class="toc-text">括号</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/18/Latex%E8%AF%AD%E6%B3%95/" title="LATEX数学语法">LATEX数学语法</a><time datetime="2023-01-18T13:28:33.571Z" title="发表于 2023-01-18 21:28:33">2023-01-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/16/5%E9%93%BE%E8%B7%AF%E5%B1%82/" title="计算机网络——第五章：链路层">计算机网络——第五章：链路层</a><time datetime="2023-01-16T11:40:08.000Z" title="发表于 2023-01-16 19:40:08">2023-01-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/16/4%E7%BD%91%E7%BB%9C%E5%B1%82/" title="计算机网络——第四章：网络层">计算机网络——第四章：网络层</a><time datetime="2023-01-16T10:40:08.000Z" title="发表于 2023-01-16 18:40:08">2023-01-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/16/3%E4%BC%A0%E8%BE%93%E5%B1%82/" title="计算机网络——第三章：传输层">计算机网络——第三章：传输层</a><time datetime="2023-01-16T09:40:08.000Z" title="发表于 2023-01-16 17:40:08">2023-01-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/16/2%E5%BA%94%E7%94%A8%E5%B1%82/" title="计算机网络——第二章：应用层">计算机网络——第二章：应用层</a><time datetime="2023-01-16T08:40:08.000Z" title="发表于 2023-01-16 16:40:08">2023-01-16</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://raw.githubusercontent.com/Guoxi-Zhang/myBlog/main/public/img/top_img1.jpeg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Guoxi Zhang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
